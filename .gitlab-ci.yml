@@ -18,8 +18,8 @@ provide-infrastructure:
 acceptance-test:
   stage: acceptance-test
   script:
-    -npm i
-    -npm run acceptancetest
+    - npm i
+    - npm run acceptancetest
    
 
 destroy-infrastructucture:
