@@ -2,6 +2,7 @@ default:
    image: pulumi/pulumi-nodejs
 stages:
   - provide
+  - acceptance-test
   - destroy
 
 provide-infrastructure:
@@ -13,6 +14,13 @@ provide-infrastructure:
     - pulumi login
     - pulumi stack select dev
     - pulumi up -y
+
+acceptance-test:
+  stage: acceptance-test
+  script:
+    -npm i
+    -npm run acceptancetest
+   
 
 destroy-infrastructucture:
    stage: destroy
