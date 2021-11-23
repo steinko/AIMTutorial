@@ -1,0 +1,17 @@
+default:
+   image: node:latest
+stages:
+  - provide
+  - destroy
+
+provide-infrastructure:
+  stage: provide
+  script:
+    - npm isntall
+    - pulumi up
+
+destroy-infrastructucture:
+   stage: destroy
+   script:
+     - npm install
+     - pulumi destroy
