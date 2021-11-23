@@ -7,11 +7,18 @@ stages:
 provide-infrastructure:
   stage: provide
   script:
-    - npm isntall
-    - pulumi up
+    - npm i
+    - pulumi login
+    - export PULUMI_ACCESS_TOKEN="$PULUMI_ACCESS_TOKEN"
+    - pulumi login
+    - pulumi stack select test
+    - pulumi up -y
 
 destroy-infrastructucture:
    stage: destroy
    script:
-     - npm install
-     - pulumi destroy
+     - npm i
+     - export PULUMI_ACCESS_TOKEN="$PULUMI_ACCESS_TOKEN"
+     - pulumi login
+     - pulumi stack select test
+     - pulumi destroy -y
