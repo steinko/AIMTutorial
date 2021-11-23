@@ -1,5 +1,5 @@
 default:
-   image: node:latest
+   image: pulumi/pulumi-nodejs
 stages:
   - provide
   - destroy
