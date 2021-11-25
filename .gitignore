@@ -4,3 +4,6 @@ package-lock.json
 .project
 /.settings
 /coverage/
+/unittest/node_modules/
+/acceptancetest/coverage/
+/acceptancetest/node_modules/

@@ -1,9 +1,18 @@
 default:
    image: pulumi/pulumi-nodejs
 stages:
+  - unit-test
   - provide
   - acceptance-test
   - destroy
+
+
+unit-test:
+  stage: unit-test
+  script:
+    - unittest
+    - npm i
+    - npm test
 
 provide-infrastructure:
   stage: provide
@@ -22,7 +31,7 @@ acceptance-test:
   script:
     - cd acceptancetest
     - npm i
-    - npm run acceptancetest
+    - npm test
     - cd ..
    
 
