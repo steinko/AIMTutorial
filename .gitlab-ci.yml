@@ -21,7 +21,6 @@ provide-infrastructure:
     - cd infAsCode
     - npm i
     - pulumi login
-    - export PULUMI_ACCESS_TOKEN="$PULUMI_ACCESS_TOKEN"
     - pulumi login
     - pulumi stack select dev
     - pulumi up -y
@@ -41,7 +40,6 @@ destroy-infrastructucture:
    script:
      - cd infAsCode
      - npm i
-     - export PULUMI_ACCESS_TOKEN="$PULUMI_ACCESS_TOKEN"
      - pulumi login
      - pulumi stack select dev
      - pulumi destroy -y
