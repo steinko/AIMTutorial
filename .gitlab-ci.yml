@@ -8,25 +8,31 @@ stages:
 provide-infrastructure:
   stage: provide
   script:
+    - cd infAsCode
     - npm i
     - pulumi login
     - export PULUMI_ACCESS_TOKEN="$PULUMI_ACCESS_TOKEN"
     - pulumi login
     - pulumi stack select dev
     - pulumi up -y
+    - cd ..
 
 acceptance-test:
   stage: acceptance-test
   script:
+    - cd acceptancetest
     - npm i
     - npm run acceptancetest
+    - cd ..
    
 
 destroy-infrastructucture:
    stage: destroy
    script:
+     - cd infAsCode
      - npm i
      - export PULUMI_ACCESS_TOKEN="$PULUMI_ACCESS_TOKEN"
      - pulumi login
      - pulumi stack select dev
      - pulumi destroy -y
+     - cd
