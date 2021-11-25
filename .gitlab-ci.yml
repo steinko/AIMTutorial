@@ -10,9 +10,10 @@ stages:
 unit-test:
   stage: unit-test
   script:
-    - cd unittest
+    - cd infAsCode
     - npm i
     - npm test
+    - cd ..
 
 provide-infrastructure:
   stage: provide
