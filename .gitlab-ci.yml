@@ -10,7 +10,7 @@ stages:
 unit-test:
   stage: unit-test
   script:
-    - unittest
+    - cd unittest
     - npm i
     - npm test
 
