@@ -1,6 +1,6 @@
 
 import { loadFeature, defineFeature } from "jest-cucumber";
-import { IAMClient, ListUsersCommand } from "@aws-sdk/client-iam";
+import { IAMClient, ListUsersCommand} from "@aws-sdk/client-iam";
 
  const feature = loadFeature("./cucumber/features/IAMUser.feature");
  

@@ -1,5 +1,7 @@
-import {awsUser} from './awsUser'
+import {user} from './user'
 import {role} from './role'
+import {accessKey} from './accessKey'
 
-awsUser
+user
 role
+accessKey

@@ -1,4 +1,3 @@
-
 import * as pulumi from "@pulumi/pulumi";
 
 pulumi.runtime.setMocks({
@@ -16,17 +15,17 @@ pulumi.runtime.setMocks({
 
 
 
-describe ("unit test IAMRole",() => {
+describe ("unit test accessKey",() => {
 	
-    let infra: typeof import("./role");
+    let infra: typeof import("./accessKey");
 
     beforeAll(async function() {
-        infra = await import("./role");
+        infra = await import("./accessKey");
     })
 	 
      it("should have a username",() => {
-	     pulumi.all([infra.role.name]).apply(([name]) => {
-	     expect (name).toBe("awsRole")
+	     pulumi.all([infra.accessKey.user]).apply(([user]) => {
+	     expect (user).toBe("awsUser")
 	     }) 
       }) 
 })
