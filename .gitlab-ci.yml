@@ -47,9 +47,3 @@ destroy-infrastructucture:
      - pulumi login
      - pulumi stack select dev
      - pulumi destroy -y
-     - cd ../assume-role
-     - npm i
-     - pulumi login
-     - pulumi stack select dev
-     - pulumi destroy -y
-     - cd
