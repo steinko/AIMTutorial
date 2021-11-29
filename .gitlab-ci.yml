@@ -6,7 +6,6 @@ stages:
   - acceptance-test
   - destroy
 
-
 unit-test:
   stage: unit-test
   script:
@@ -38,7 +37,6 @@ acceptance-test:
     - npm test
     - cd ..
    
-
 destroy-infrastructucture:
    stage: destroy
    script:
