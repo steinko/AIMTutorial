@@ -7,3 +7,5 @@ package-lock.json
 /unittest/node_modules/
 /acceptancetest/coverage/
 /acceptancetest/node_modules/
+infAsCode/assume-role/node_modules/
+infAsCode/create-role/node_modules/

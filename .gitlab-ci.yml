@@ -26,7 +26,8 @@ provide-infrastructure:
     - export AWS_ACCESS_KEY_ID="$(pulumi stack output  accessKeyId)"
     - export AWS_SECRET_ACCESS_KEY="$(pulumi stack output --show-secrets secretAccessKey)"
     - cd ../assume-role
-    - npm install
+    - npm i
+    - pulumi stack select dev
     - pulumi up -y
 
 acceptance-test:
