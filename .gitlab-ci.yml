@@ -2,9 +2,9 @@ default:
    image: pulumi/pulumi-nodejs
 stages:
   - unit-test
-  - provide
+  - provide-infrastructure
   - acceptance-test
-  - destroy
+  - destroy-infrastructure
 
 unit-test:
   stage: unit-test
@@ -15,7 +15,7 @@ unit-test:
     - cd ..
 
 provide-infrastructure:
-  stage: provide
+  stage: provide-infrastructure
   script:
     - cd infAsCode/create-role
     - npm i
@@ -38,9 +38,14 @@ acceptance-test:
     - cd ..
    
 destroy-infrastructucture:
-   stage: destroy
+   stage: destroy-infrastructure
    script:
-     - cd infAsCode
+     - cd infAsCode/create-role
+     - npm i
+     - pulumi login
+     - pulumi stack select dev
+     - pulumi destroy -y
+     - cd ../assume-role
      - npm i
      - pulumi login
      - pulumi stack select dev

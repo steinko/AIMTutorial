@@ -1,3 +1,2 @@
 config:
-  assume-role:roleToAssumeARN: arn:aws:iam::943302850444:role/awsRole
   aws:region: eu-north-1
